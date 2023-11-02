@@ -20,65 +20,46 @@ function run {
 }
 
 # Gnome theme
-run "gsd-xsettings" "/usr/libexec/gsd-xsettings"
-
-# # Numlock
-# numlockx on
-
-# # Disable screen blanking and power management, set keyboard repeat rate
-# /usr/bin/xset s off && /usr/bin/xset s noblank && /usr/bin/xset -dpms &
-# /usr/bin/xset r rate 350 40 &
+# run "gsd-xsettings" "/usr/libexec/gsd-xsettings"
 
 # Wallpaper
-nitrogen --restore &
+# nitrogen --restore &
 
-# Keyring
+# Gnome
+## Keyring
 # dbus-update-activation-environment --all &
 # gnome-keyring-daemon --start --components=secrets &
 
-# Polkit
-run "polkit-gnome-authentication-agent-1" "/usr/libexec/polkit-gnome-authentication-agent-1"
+## Polkit
+# run "polkit-gnome-authentication-agent-1" "/usr/libexec/polkit-gnome-authentication-agent-1"
 
+# KDE
+## Keyring
 # run "kwallet" "/usr/lib/pam_kwallet_init"
+
+## Polkit
 # run "polkit-kde-auth" "/usr/lib/polkit-kde-authentication-agent-1"
 
 # Clipmenu
-run "clipmenud"
+# run "clipmenud"
 
 # keyd
-XDG_CURRENT_DESKTOP=dwm keyd-application-mapper -d &
+# XDG_CURRENT_DESKTOP=dwm keyd-application-mapper -d &
 
 # Dropbox
-run "dropbox" "dropbox start"
-
-# Mouse speed
-# xinput set-prop 8 305 0, 1 &
-# xinput set-prop 8 303 -0.5 &
-# xinput set-prop 11 310 0, 1 &
-# xinput set-prop 11 307 0.1 &
-# xinput set-prop "Logitech Gaming Mouse G600" "libinput Accel Profile Enabled" 0, 1 &
-# xinput set-prop "Logitech Gaming Mouse G600" "libinput Accel Speed" 0.1 &
-
-# Emacs daemon
-# emacs --daemon /home/karol/Dropbox/org/ &
+# run "dropbox" "dropbox start"
 
 # Night color
 # run "redshift"
 
 # Notifications
-run "dunst"
+# run "dunst"
 
 # Netowrk manager
 # run "nm-applet"
 
 # DWM blocks
-run "dwmblocks"
+# run "dwmblocks"
 
 # Compositor
-run "compton"
-
-# # Set volume
-# /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ 100%
-# pkill -RTMIN+10 dwmblocks &
-
-/home/karol/.config/suckless/dwm/autostart-1.sh &
+# run "compton"
