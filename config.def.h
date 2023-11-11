@@ -38,7 +38,7 @@ typedef struct {
 	const void *cmd;
 } Sp;
 const char *spcmd1[] = {"alacritty", "--class", "spterm", "-o", "window.dimensions.columns=120", "-o", "window.dimensions.lines=38", "-e", "tmux", "new-session", "-A", "-s", "spterm", NULL };
-const char *spcmd2[] = {"alacritty", "--class", "splf", "-o", "window.dimensions.columns=120", "-o", "window.dimensions.lines=38", "-e", "tmux", "new-session", "-A", "-s", "splf", "lf", NULL };
+const char *spcmd2[] = {"alacritty", "--class", "splf", "-o", "window.dimensions.columns=120", "-o", "window.dimensions.lines=38", "-e", "tmux", "new-session", "-A", "-s", "splf", "lfrun", NULL };
 /* const char *spcmd2[] = {"kitty", "--class", "splf", "-o", "initial_window_width=1080", "-o", "initial_window_height=720", "-e", "lf", NULL }; */
 /* const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL }; */
 /* const char *spcmd3[] = {"keepassxc", NULL }; */
