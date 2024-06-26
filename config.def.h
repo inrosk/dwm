@@ -175,6 +175,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_comma,  cyclelayout,    {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
 	STACKKEYS(MODKEY,             stackfocus) // focus on the nth client in the stack
 	STACKKEYS(MODKEY|ControlMask, stackpush)  // move the currently focused client to the nth place in the stack
 	STACKKEYS(MODKEY|ShiftMask,   stackswap)  // swap the currently focused client with the nth client in the stack
