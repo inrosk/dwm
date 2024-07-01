@@ -89,6 +89,17 @@ static const MonitorRule monrules[] = {
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
+#define STACKKEYS(MOD,ACTION) \
+	{ MOD, XK_j,                ACTION, {.i = INC(+1) } }, \
+	{ MOD, XK_k,                ACTION, {.i = INC(-1) } }, \
+	{ MOD, XK_semicolon,        ACTION, {.i = PREVSEL } }, \
+	{ MOD, XK_y,                ACTION, {.i = MASTER(1) } }, \
+	{ MOD, XK_u,                ACTION, {.i = MASTER(2) } }, \
+	{ MOD, XK_n,                ACTION, {.i = STACK(1) } }, \
+	{ MOD, XK_o,                ACTION, {.i = STACK(2) } }, \
+	{ MOD, XK_g,                ACTION, {.i = STACK(3) } }, \
+	{ MOD, XK_slash,            ACTION, {.i = LASTTILED } },
+
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
@@ -102,8 +113,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
@@ -141,6 +150,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	STACKKEYS(MODKEY,             stackfocus) // focus on the nth client in the stack
+	STACKKEYS(MODKEY|ControlMask, stackpush)  // move the currently focused client to the nth place in the stack
+	STACKKEYS(MODKEY|ShiftMask,   stackswap)  // swap the currently focused client with the nth client in the stack
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

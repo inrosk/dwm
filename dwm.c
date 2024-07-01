@@ -325,7 +325,9 @@ static Monitor *mons, *selmon;
 static Window root, wmcheckwin;
 
 /* configuration, allows nested code to access above variables */
+#include "stacker.h"
 #include "config.h"
+#include "stacker.c"
 
 struct Pertag {
 	unsigned int curtag, prevtag; /* current and previous tag */
@@ -857,6 +859,7 @@ detach(Client *c)
 
 	for (tc = &c->mon->clients; *tc && *tc != c; tc = &(*tc)->next);
 	*tc = c->next;
+	c->next = NULL;
 }
 
 void
@@ -866,6 +869,7 @@ detachstack(Client *c)
 
 	for (tc = &c->mon->stack; *tc && *tc != c; tc = &(*tc)->snext);
 	*tc = c->snext;
+	c->snext = NULL;
 
 	if (c == c->mon->sel) {
 		for (t = c->mon->stack; t && !ISVISIBLE(t); t = t->snext);
