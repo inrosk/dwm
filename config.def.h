@@ -48,7 +48,7 @@ static const Rule rules[] = {
   *  WM_WINDOW_ROLE(STRING) = role
   */
 
-  /* class      role,       instance    title       tags mask     isfloating   monitor    scratch key */
+  /* class      role,       instance    title       tags mask     isfloating   monitor    scratch key  isgame */
   { "ark",      NULL,       NULL,       NULL,       0,            1,           -1,        0 },
   { "dolphin",  NULL,       NULL,       NULL,       0,            1,           -1,        0 },
   { "spectacle", NULL,      NULL,       NULL,       0,            1,           -1,        0 },
@@ -83,11 +83,11 @@ static const Rule rules[] = {
   /* Gaming */
   { "Lutris",   NULL,       NULL,       NULL,       1 << 6,       0,           -1,        0 },
   { NULL,       NULL,       "steamwebhelper", NULL, 1 << 6,       0,           -1,        0 },
-  { "d2r.exe",   NULL,      NULL,       NULL,       1 << 7,       0,           -1,        0 },
-  { "gw.exe",   NULL,       NULL,       NULL,       1 << 7,       0,           -1,        0 },
-  { "steam_app_1284210", NULL, NULL,    NULL,       1 << 7,       0,           -1,        0 },
-  { "gw2-64.exe", NULL,     NULL,       NULL,       1 << 7,       0,           -1,        0 },
-  { "explorer.exe", NULL,   NULL,       NULL,       1 << 7,       0,           -1,        0 },
+  { "steam_app", NULL,      NULL,       NULL,       1 << 2,       0,           -1,        0,        1 },
+  { "gw2-64.exe", NULL,     NULL,       NULL,       1 << 2,       0,           -1,        0,        1 },
+  { "gw.exe",   NULL,       NULL,       NULL,       1 << 2,       0,           -1,        0,        1 },
+  { "d2r.exe",  NULL,       NULL,       NULL,       1 << 2,       0,           -1,        0,        1 },
+  { "explorer.exe", NULL,   NULL,       NULL,       1 << 2,       0,           -1,        0,        1 },
 
   /* VM */
   { "virt-manager", NULL,   NULL,       NULL,       1 << 5,       0,           -1,        0 },
