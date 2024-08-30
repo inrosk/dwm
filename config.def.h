@@ -15,7 +15,7 @@ static const int smartgaps = 1;
 static const int showsystray = 1;     /* 0 means no systray */
 static const int showbar = 1;        /* 0 means no bar */
 static const int topbar = 1;        /* 0 means bottom bar */
-static const char *fonts[] = { "FiraCode Nerd Font:size=9", "monospace:size=10" };
+static const char *fonts[] = { "SFMono Nerd Font:size=9", "FiraCode Nerd Font:size=9", "monospace:size=10" };
 static const char bg_normal[] = "#161a1c";
 static const char bg_sel[] = "#3c3836";
 static const char fg_normal[] = "#a89984";
@@ -67,8 +67,8 @@ static const Rule rules[] = {
 	{ "Inkscape", NULL,       NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "figma",    NULL,       NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "Lutris",   NULL,       NULL,       NULL,       1 << 6,       0,           -1 },
-	{ "Steam",    NULL,       NULL,       NULL,       1 << 6,       0,           -1 },
-	{ "steamwebhelper",  NULL, NULL,      NULL,       1 << 6,       0,           -1 },
+	{ "Steam",    NULL,       NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "steamwebhelper",  NULL, NULL,      NULL,       1 << 5,       0,           -1 },
 	{ "steam_app_1284210", NULL, NULL,    NULL,       1 << 6,       0,           -1 },
 	{ "gw2-64.exe", NULL,     NULL,       NULL,       1 << 6,       1,           -1 },
 	{ "explorer.exe", NULL,   NULL,       NULL,       1 << 6,       1,           -1 },
