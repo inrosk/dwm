@@ -16,10 +16,10 @@ static const int showsystray = 1;     /* 0 means no systray */
 static const int showbar = 1;        /* 0 means no bar */
 static const int topbar = 1;        /* 0 means bottom bar */
 static const char *fonts[] = { "SFMono Nerd Font:size=9", "FiraCode Nerd Font:size=9", "monospace:size=10" };
-static const char bg_normal[] = "#161a1c";
-static const char bg_sel[] = "#3c3836";
+static const char bg_normal[] = "#000000";
+static const char bg_sel[] = "#32302f";
 static const char fg_normal[] = "#a89984";
-static const char fg_sel[] = "#bdae93";
+static const char fg_sel[] = "#ebdbb2";
 static const char col_accent[] = "#98971a";
 static const char *colors[][3] = {
 	/*               fg         bg          border   */
@@ -39,7 +39,6 @@ typedef struct {
 } Sp;
 const char *spcmd1[] = {"alacritty", "--class", "spterm", "-o", "window.dimensions.columns=120", "-o", "window.dimensions.lines=38", "-e", "tmux", "new-session", "-A", "-s", "spterm", NULL };
 const char *spcmd2[] = {"alacritty", "--class", "splf", "-o", "window.dimensions.columns=120", "-o", "window.dimensions.lines=38", "-e", "tmux", "new-session", "-A", "-s", "splf", "lfrun", NULL };
-/* const char *spcmd2[] = {"kitty", "--class", "splf", "-o", "initial_window_width=1080", "-o", "initial_window_height=720", "-e", "lf", NULL }; */
 /* const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL }; */
 /* const char *spcmd3[] = {"keepassxc", NULL }; */
 static Sp scratchpads[] = {
@@ -52,7 +51,7 @@ static Sp scratchpads[] = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *defaulttagapps[] = { "brave", "firefox", "alacritty", "emacs", "figma-linux", "dmenu_run", "steam", "dmenu_run", "dmenu_run" };
+static const char *defaulttagapps[] = { "firefox", "brave", "alacritty", "emacs", "figma-linux", "dmenu_run", "steam", "dmenu_run", "dmenu_run" };
 
 static const Rule rules[] = {
 	/* xprop(1):
