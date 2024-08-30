@@ -173,10 +173,10 @@ static Key keys[] = {
 
 	/* Leyout manipulation */
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} }, // Set tile layout
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[1]} }, // Set monocle layout
+	{ MODKEY,                       XK_w,      setlayout,      {.v = &layouts[1]} }, // Set monocle layout
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[2]} }, // Set floating layout
 	{ MODKEY,                       XK_f,      togglefloating, {0} }, // Toggle window floating
-	{ MODKEY,                       XK_w,      togglefullscr,  {0} }, // Toggle fullscreen
+	{ MODKEY,                       XK_m,      togglefullscr,  {0} }, // Toggle fullscreen
 
 	/* Scratchpads */
 	{ MODKEY,            			XK_z,					togglescratch,  {.ui = 0 } },
