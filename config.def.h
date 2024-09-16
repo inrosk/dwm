@@ -15,7 +15,7 @@ static const int smartgaps = 1;
 static const int showsystray = 1;     /* 0 means no systray */
 static const int showbar = 1;        /* 0 means no bar */
 static const int topbar = 1;        /* 0 means bottom bar */
-static const char *fonts[] = { "SFMono Nerd Font:size=9", "FiraCode Nerd Font:size=9", "monospace:size=10" };
+static const char *fonts[] = { "SFMono Nerd Font:size=8", "FiraCode Nerd Font:size=8", "monospace:size=10" };
 static const char bg_normal[] = "#000000";
 static const char bg_sel[] = "#32302f";
 static const char fg_normal[] = "#a89984";
