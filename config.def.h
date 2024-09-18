@@ -7,10 +7,10 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayonleft = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
 static const unsigned int systrayspacing = 8;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const unsigned int gappih = 8;
-static const unsigned int gappiv = 8;
-static const unsigned int gappoh = 8;
-static const unsigned int gappov = 8;
+static const unsigned int gappih = 5;
+static const unsigned int gappiv = 5;
+static const unsigned int gappoh = 0;
+static const unsigned int gappov = 0;
 static const int smartgaps = 1;
 static const int showsystray = 1;     /* 0 means no systray */
 static const int showbar = 1;        /* 0 means no bar */
@@ -67,6 +67,7 @@ static const Rule rules[] = {
 	{ "figma",    NULL,       NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "Lutris",   NULL,       NULL,       NULL,       1 << 6,       0,           -1 },
 	{ "Steam",    NULL,       NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "steam",    NULL,       NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "steamwebhelper",  NULL, NULL,      NULL,       1 << 5,       0,           -1 },
 	{ "steam_app_1284210", NULL, NULL,    NULL,       1 << 6,       0,           -1 },
 	{ "gw2-64.exe", NULL,     NULL,       NULL,       1 << 6,       1,           -1 },
@@ -157,7 +158,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_s,      spawndefault,   {0} }, // Spawn favorite app per tag
 	{ MODKEY,                       XK_q,      killclient,     {0} }, // Kill window
 	{ Mod1Mask,                     XK_F4,     killclient,     {0} }, // Kill window
-	{ MODKEY|ShiftMask,				XK_r,      spawn,		   SHCMD("xdotool getactivewindow windowsize 1080 768")}, // Resize window
+	{ MODKEY|ShiftMask,				      XK_r,      spawn,		       SHCMD("xdotool getactivewindow windowsize 968 650")}, // Resize window
 
 	/* Window navigation */
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } }, // Focus next window
