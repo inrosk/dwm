@@ -61,7 +61,6 @@ static const Rule rules[] = {
 	 */
 	/* class      role        instance    title       tags mask     isfloating   monitor */
 	{ "ark",      NULL,       NULL,       NULL,       0,            1,           -1 },
-	{ "code",     NULL,       NULL,       NULL,       0,            1,           -1 },
 	{ "dolphin",  NULL,       NULL,       NULL,       0,            1,           -1 },
 	{ NULL,       NULL,       NULL, "Emoji Selector", 0,            1,           -1 },
 	{ "Engrampa", NULL,       NULL,       NULL,       0,            1,           -1 },
