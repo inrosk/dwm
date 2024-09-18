@@ -15,7 +15,7 @@ static const int smartgaps = 1;
 static const int showsystray = 1;     /* 0 means no systray */
 static const int showbar = 1;        /* 0 means no bar */
 static const int topbar = 1;        /* 0 means bottom bar */
-static const char *fonts[] = { "SFMono Nerd Font:size=8", "FiraCode Nerd Font:size=8", "monospace:size=10" };
+static const char *fonts[] = { "SFMono Nerd Font:size=7", "FiraCode Nerd Font:size=8", "monospace:size=10" };
 static const char bg_normal[] = "#000000";
 static const char bg_sel[] = "#32302f";
 static const char fg_normal[] = "#a89984";
@@ -51,7 +51,7 @@ static Sp scratchpads[] = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *defaulttagapps[] = { "firefox", "brave", "alacritty", "emacs", "figma-linux", "dmenu_run", "steam", "dmenu_run", "dmenu_run" };
+static const char *defaulttagapps[] = { "firefox", "brave", "alacritty", "emacs", "figma-linux", "steam", "dmenu_run", "dmenu_run", "dmenu_run" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -60,36 +60,53 @@ static const Rule rules[] = {
       WM_WINDOW_ROLE(STRING) = role
 	 */
 	/* class      role        instance    title       tags mask     isfloating   monitor */
-	{ "obsidian", NULL,       NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "ark",      NULL,       NULL,       NULL,       0,            1,           -1 },
+	{ "code",     NULL,       NULL,       NULL,       0,            1,           -1 },
+	{ "dolphin",  NULL,       NULL,       NULL,       0,            1,           -1 },
+	{ NULL,       NULL,       NULL, "Emoji Selector", 0,            1,           -1 },
+	{ "Engrampa", NULL,       NULL,       NULL,       0,            1,           -1 },
+	{ "feh",      NULL,       NULL,       NULL,       0,            1,           -1 },
+	{ "gnome-system-monitor",  NULL, NULL, NULL,      0,            1,           -1 },
+	{ "Gpick",    NULL,       NULL,       NULL,       0,            1,           -1 },
+	{ "gwenview", NULL,       NULL,       NULL,       0,            1,           -1 },
+	{ "FileRoller", NULL,     NULL,       NULL,       0,            1,           -1 },
+	{ "Loupe",    NULL,       NULL,       NULL,       0,            1,           -1 },
+	{ "Nautilus", NULL,       NULL,       NULL,       0,            1,           -1 },
+	{ "Pavucontrol", NULL,    NULL,       NULL,       0,            1,           -1 },
+	{ "pwvucontrol", NULL,    NULL,       NULL,       0,            1,           -1 },
+	{ "Qalculate", NULL,      NULL,       NULL,       0,            1,           -1 },
+	{ "Ristretto", NULL,      NULL,       NULL,       0,            1,           -1 },
+	{ "Thunar",   NULL,       NULL,       NULL,       0,            1,           -1 },
+	{ "vimiv",    NULL,       NULL,       NULL,       0,            1,           -1 },
+	{ NULL,       "pop-up",   NULL,       NULL,       0,            1,           -1 },
+	{ NULL,       "quake",    NULL,       NULL,       0,            1,           -1 },
+	{ NULL,       "GtkFileChooserDialog", NULL,	NULL, 0,				    1,           -1 },
+
+	/* Graphics */
 	{ "Gimp",     NULL,       NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "krita",    NULL,       NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "Inkscape", NULL,       NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "figma",    NULL,       NULL,       NULL,       1 << 4,       0,           -1 },
-	{ "Lutris",   NULL,       NULL,       NULL,       1 << 6,       0,           -1 },
-	{ "Steam",    NULL,       NULL,       NULL,       1 << 5,       0,           -1 },
+
+	/* Games */
+	{ "Lutris",   NULL,       NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "steam",    NULL,       NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "steamwebhelper",  NULL, NULL,      NULL,       1 << 5,       0,           -1 },
+	{ "battle.net.exe", NULL, NULL,       NULL,       1 << 5,       1,           -1 },
 	{ "steam_app_1284210", NULL, NULL,    NULL,       1 << 6,       0,           -1 },
 	{ "gw2-64.exe", NULL,     NULL,       NULL,       1 << 6,       1,           -1 },
 	{ "explorer.exe", NULL,   NULL,       NULL,       1 << 6,       1,           -1 },
-	{ "battle.net.exe", NULL, NULL,       NULL,       1 << 6,       1,           -1 },
 	{ "overwatch.exe", NULL,  NULL,       NULL,       1 << 6,       1,           -1 },
+
+	/* Media */
+	{ "Celluloid", NULL,      NULL,       NULL,       1 << 7,       0,           -1 },
 	{ NULL,       NULL,       NULL,       "Haruna",   1 << 7,       0,           -1 },
-	{ "qBittorrent", NULL,    NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "Barrier",  NULL,       NULL,       NULL,       1 << 8,       1,           -1 },
-	{ "Pavucontrol", NULL,    NULL,       NULL,       0,            1,           -1 },
-	{ "gnome-control-center", NULL, NULL, NULL,       0,            1,           -1 },
-	{ "Qalculate-gtk",  NULL, NULL,       NULL,       0,            1,           -1 },
-	{ "gwenview", NULL,       NULL,       NULL,       0,            1,           -1 },
-	{ "dolphin",  NULL,       NULL,       NULL,       0,            1,           -1 },
-	{ "Thunar",   NULL,       NULL,       NULL,       0,            1,           -1 },
-	{ "Nautilus", NULL,       NULL,       NULL,       0,            1,           -1 },
-	{ "Gpick",    NULL,       NULL,       NULL,       0,            1,           -1 },
-	{ NULL,       NULL,       NULL, "Task Manager",   0,            1,           -1 },
-	{ NULL,       NULL,       NULL, "Emoji Selector", 0,            1,           -1 },
-	{ NULL,       "pop-up",   NULL,       NULL,       0,            1,           -1 },
-	{ NULL,       "quake",    NULL,       NULL,       0,            1,           -1 },
-	{ NULL,       "GtkFileChooserDialog", NULL,	NULL, 0,				    1,           -1 },
+	{ NULL,       NULL,       NULL,    "qBittorrent", 1 << 8,       0,           -1 },
+
+	/* VM */
+	{ "virt-manager", NULL,   NULL,       NULL,       1 << 7,       0,           -1 },
+
+	/* Scratchpad */
 	{ NULL,	      NULL,       "spterm",   NULL,		  SPTAG(0),			  1,			  	 -1 },
 	{ NULL,	      NULL,       "splf",	    NULL,		  SPTAG(1),			 	1,	         -1 },
 };
@@ -125,9 +142,10 @@ static const Layout layouts[] = {
 static const MonitorRule monrules[] = {
 	/* monitor, tag, layout  mfact  nmaster  showbar  topbar */
 	/* {1,      -1,  2,      -1,    -1,      -1,      -1     }, // use a different layout for the second monitor */
-	{  -1,       4,  1,      -1,    -1,      -1,      -1     }, 
+	{  -1,       4,  0,      -1,    -1,      -1,      -1     },
 	{  -1,       5,  1,      -1,    -1,      -1,      -1     },
-	{  -1,       7,  2,      -1,    -1,      -1,      -1     }, 
+	{  -1,       7,  2,      -1,    -1,      -1,      -1     },
+	{  -1,       8,  1,      -1,    -1,      -1,      -1     },
 	{  -1,      -1,  0,      -1,    -1,      -1,      -1     }, // default
 };
 
@@ -160,17 +178,25 @@ static Key keys[] = {
 	{ Mod1Mask,                     XK_F4,     killclient,     {0} }, // Kill window
 	{ MODKEY|ShiftMask,				      XK_r,      spawn,		       SHCMD("xdotool getactivewindow windowsize 968 650")}, // Resize window
 
-	/* Window navigation */
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } }, // Focus next window
+	/* Focus */
 	{ Mod1Mask,                     XK_Tab,    focusstack,     {.i = +1 } }, // Focus next window
+	{ Mod1Mask|ShiftMask,           XK_Tab,    focusstack,     {.i = -1 } }, // Focus prev window
+
+	{ MODKEY,                       XK_h,      focusstack,     {.i = -1 } }, // Focus prev window
+	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } }, // Focus next window
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } }, // Focus prev window
-	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = +1 } }, // Increase number of windows in master area
-	{ MODKEY|ShiftMask,             XK_d,      incnmaster,     {.i = -1 } }, // Reduce number of windows in master area
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} }, // Increase size of master area
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} }, // Reduce size of master area
+	{ MODKEY,                       XK_l,      focusstack,     {.i = +1 } }, // Focus next window
+
+	/* Move */
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } }, // Move window down
 	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } }, // Move window up
 	{ MODKEY,                       XK_BackSpace, zoom,        {0} }, // Promote to master
+	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = +1 } }, // Increase number of windows in master area
+	{ MODKEY|ShiftMask,             XK_d,      incnmaster,     {.i = -1 } }, // Reduce number of windows in master area
+
+	/* Resize */
+	{ MODKEY|ControlMask,           XK_l,      setmfact,       {.f = +0.01} }, // Increase size of master area
+	{ MODKEY|ControlMask,           XK_h,      setmfact,       {.f = -0.01} }, // Reduce size of master area
 
 	/* Leyout manipulation */
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} }, // Set tile layout
@@ -180,8 +206,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,      togglefullscr,  {0} }, // Toggle fullscreen
 
 	/* Scratchpads */
-	{ MODKEY,            			XK_z,					togglescratch,  {.ui = 0 } },
-	{ MODKEY,            			XK_x,					togglescratch,  {.ui = 1 } },
+	{ MODKEY,            			      XK_z,			 togglescratch,  {.ui = 0 } },
+	{ MODKEY,            			      XK_x,			 togglescratch,  {.ui = 1 } },
 	/* { MODKEY,            			      XK_c,	     togglescratch,  {.ui = 2 } }, */
 
 	/* Switching between monitors */
