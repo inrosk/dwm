@@ -37,15 +37,20 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = {"alacritty", "--class", "spterm", "-o", "window.dimensions.columns=120", "-o", "window.dimensions.lines=38", "-e", "tmux", "new-session", "-A", "-s", "spterm", NULL };
-const char *spcmd2[] = {"alacritty", "--class", "splf", "-o", "window.dimensions.columns=120", "-o", "window.dimensions.lines=38", "-e", "tmux", "new-session", "-A", "-s", "splf", "lfrun", NULL };
+const char *spcmd1[] = { "sh", "-c", "$DOTFILES_BIN/dwm/scratch-term", NULL };
+const char *spcmd2[] = { "sh", "-c", "$DOTFILES_BIN/dwm/scratch-emacs", NULL };
+const char *spcmd3[] = { "sh", "-c", "$DOTFILES_BIN/dwm/scratch-lf", NULL };
+/* const char *spcmd1[] = {"alacritty", "--class", "spterm", "-o", "window.dimensions.columns=120", "-o", "window.dimensions.lines=38", "-e", "tmux", "new-session", "-A", "-s", "spterm", NULL }; */
+/* const char *spcmd2[] = {"emacsclient", "-n", "-c", "--frame-parameters='(quote (name . \"scratchmacs\"))'", NULL }; */
+/* const char *spcmd3[] = {"alacritty", "--class", "splf", "-o", "window.dimensions.columns=120", "-o", "window.dimensions.lines=38", "-e", "tmux", "new-session", "-A", "-s", "splf", "lfrun", NULL }; */
 /* const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL }; */
 /* const char *spcmd3[] = {"keepassxc", NULL }; */
 static Sp scratchpads[] = {
 	/* name          cmd  */
-	{"spterm",      spcmd1},
-	{"splf",    spcmd2},
-	/* {"keepassxc",   spcmd3}, */
+	{"spterm",       spcmd1},
+	{"scratchmacs",  spcmd2},
+	{"splf",         spcmd3},
+	/* {"keepassxc",    spcmd3}, */
 };
 
 
@@ -65,7 +70,8 @@ static const Rule rules[] = {
 	{ NULL,       NULL,       NULL, "Emoji Selector", 0,            1,           -1 },
 	{ "Engrampa", NULL,       NULL,       NULL,       0,            1,           -1 },
 	{ "feh",      NULL,       NULL,       NULL,       0,            1,           -1 },
-	{ "gnome-system-monitor",  NULL, NULL, NULL,      0,            1,           -1 },
+	{ "firefox",  NULL,       "Places",   NULL,       0,            1,           -1 },
+	{ "gnome-system-monitor", NULL, NULL, NULL,       0,            1,           -1 },
 	{ "Gpick",    NULL,       NULL,       NULL,       0,            1,           -1 },
 	{ "gwenview", NULL,       NULL,       NULL,       0,            1,           -1 },
 	{ "FileRoller", NULL,     NULL,       NULL,       0,            1,           -1 },
@@ -106,8 +112,9 @@ static const Rule rules[] = {
 	{ "virt-manager", NULL,   NULL,       NULL,       1 << 7,       0,           -1 },
 
 	/* Scratchpad */
-	{ NULL,	      NULL,       "spterm",   NULL,		  SPTAG(0),			  1,			  	 -1 },
-	{ NULL,	      NULL,       "splf",	    NULL,		  SPTAG(1),			 	1,	         -1 },
+	{ NULL,	      NULL,       "spterm",   NULL,		    SPTAG(0),			  1,			   -1 },
+	{ NULL,	      NULL,       "scratchmacs", NULL,    SPTAG(1),		    1,	       -1 },
+	{ NULL,	      NULL,       "splf",	    NULL,		    SPTAG(2),			 	1,	       -1 },
 };
 
 /* layout(s) */
@@ -207,7 +214,7 @@ static Key keys[] = {
 	/* Scratchpads */
 	{ MODKEY,            			      XK_z,			 togglescratch,  {.ui = 0 } },
 	{ MODKEY,            			      XK_x,			 togglescratch,  {.ui = 1 } },
-	/* { MODKEY,            			      XK_c,	     togglescratch,  {.ui = 2 } }, */
+	{ MODKEY,            			      XK_c,	     togglescratch,  {.ui = 2 } },
 
 	/* Switching between monitors */
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
@@ -217,8 +224,9 @@ static Key keys[] = {
 
 
 	/* Volume control */
-	{ MODKEY,                       XK_minus, spawn,          SHCMD("pamixer --allow-boost -d 5; pkill -RTMIN+10 dwmblocks") },
-	{ MODKEY,                       XK_equal, spawn,          SHCMD("pamixer --allow-boost -i 5; pkill -RTMIN+10 dwmblocks") },
+	{ MODKEY,                       XK_minus,  spawn,          SHCMD("set-vol down") },
+	{ MODKEY,                       XK_equal,  spawn,          SHCMD("set-vol up") },
+
 	/* { MODKEY,                       XK_minus, spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -1%; pkill -RTMIN+10 dwmblocks") }, */
 	/* { MODKEY,                       XK_equal, spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +1%; pkill -RTMIN+10 dwmblocks") }, */
 
