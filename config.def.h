@@ -95,12 +95,11 @@ static const Rule rules[] = {
 
 	/* Games */
 	{ "Lutris",   NULL,       NULL,       NULL,       1 << 5,       0,           -1 },
-	{ "steam",    NULL,       NULL,       NULL,       1 << 5,       0,           -1 },
-	{ "steamwebhelper",  NULL, NULL,      NULL,       1 << 5,       0,           -1 },
-	{ "battle.net.exe", NULL, NULL,       NULL,       1 << 5,       1,           -1 },
+	{ NULL,       NULL,       "steamwebhelper", NULL, 1 << 5,       0,           -1 },
 	{ "steam_app_1284210", NULL, NULL,    NULL,       1 << 6,       0,           -1 },
 	{ "gw2-64.exe", NULL,     NULL,       NULL,       1 << 6,       1,           -1 },
 	{ "explorer.exe", NULL,   NULL,       NULL,       1 << 6,       1,           -1 },
+	{ "battle.net.exe", NULL, NULL,       NULL,       1 << 5,       1,           -1 },
 	{ "overwatch.exe", NULL,  NULL,       NULL,       1 << 6,       1,           -1 },
 
 	/* Media */
