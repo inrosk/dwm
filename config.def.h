@@ -26,11 +26,11 @@ static const char *colors[][3] = {
 	[SchemeNorm] = { fg_normal, bg_normal, bg_normal },
 	[SchemeSel] = { fg_sel, bg_sel, col_accent  },
 
-	[SchemeStatus] = { fg_normal, bg_normal, bg_normal }, // Statusbar right {text, background, border not used but cannot be empty}
+	[SchemeStatus] = { fg_sel, bg_normal, bg_normal }, // Statusbar right {text, background, border not used but cannot be empty}
 	[SchemeTagsSel] = { fg_sel, bg_sel, bg_sel }, // Tagbar left selected {text, background, border not used but cannot be empty}
 	[SchemeTagsNorm] = { fg_normal, bg_normal, bg_normal }, // Tagbar left unselected {text, background, border not used but cannot be empty}
-	[SchemeInfoSel] = { fg_normal, bg_normal, bg_normal }, // infobar middle  selected {text, background, border not used but cannot be empty}
-	[SchemeInfoNorm] = { fg_normal, bg_normal, bg_normal }, // infobar middle  unselected {text, background, border not used but cannot be empty}
+	[SchemeInfoSel] = { fg_sel, bg_normal, bg_normal }, // infobar middle  selected {text, background, border not used but cannot be empty}
+	[SchemeInfoNorm] = { fg_sel, bg_normal, bg_normal }, // infobar middle  unselected {text, background, border not used but cannot be empty}
 };
 
 typedef struct {
