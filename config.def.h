@@ -203,7 +203,11 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_l,      setmfact,       {.f = +0.01} }, // Increase size of master area
 	{ MODKEY|ControlMask,           XK_h,      setmfact,       {.f = -0.01} }, // Reduce size of master area
 
+	{ MODKEY,                      XK_KP_Insert, setmfact,     {.f = 1.55} }, // Reset the size of master area
+	{ MODKEY,                       XK_KP_End,   setmfact,     {.f = 1.69} }, // Set size for waydroid
+
 	/* Leyout manipulation */
+	{ MODKEY,                       XK_e,      setlayout,      {.v = &layouts[0]} }, // Set tile layout
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} }, // Set tile layout
 	{ MODKEY,                       XK_w,      setlayout,      {.v = &layouts[1]} }, // Set monocle layout
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[2]} }, // Set floating layout
