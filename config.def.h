@@ -81,6 +81,7 @@ static const Rule rules[] = {
 	{ "pwvucontrol", NULL,    NULL,       NULL,       0,            1,           -1 },
 	{ "Qalculate", NULL,      NULL,       NULL,       0,            1,           -1 },
 	{ "Ristretto", NULL,      NULL,       NULL,       0,            1,           -1 },
+	{ "spectacle", NULL,      NULL,       NULL,       0,            1,           -1 },
 	{ "Thunar",   NULL,       NULL,       NULL,       0,            1,           -1 },
 	{ "vimiv",    NULL,       NULL,       NULL,       0,            1,           -1 },
 	{ NULL,       "pop-up",   NULL,       NULL,       0,            1,           -1 },
@@ -204,7 +205,8 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_h,      setmfact,       {.f = -0.01} }, // Reduce size of master area
 
 	{ MODKEY,                      XK_KP_Insert, setmfact,     {.f = 1.55} }, // Reset the size of master area
-	{ MODKEY,                       XK_KP_End,   setmfact,     {.f = 1.69} }, // Set size for waydroid
+	{ MODKEY,                      XK_KP_End,   setmfact,      {.f = 1.69} }, // Size for waydroid
+	{ MODKEY,                      XK_KP_Down,  setmfact,      {.f = 1.66} }, // Size for emacs window
 
 	/* Leyout manipulation */
 	{ MODKEY,                       XK_e,      setlayout,      {.v = &layouts[0]} }, // Set tile layout

@@ -10,7 +10,7 @@
         let pkgs = pkgs'.${system};
         in with pkgs; {
           default = mkShell {
-            packages = [ ];
+            packages = [ clang-tools ];
 
             buildInputs = with xorg; [ libX11 libXinerama libXft ];
 
