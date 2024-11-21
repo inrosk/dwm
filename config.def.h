@@ -182,7 +182,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_s,      spawndefault,   {0} }, // Spawn favorite app per tag
 	{ MODKEY,                       XK_q,      killclient,     {0} }, // Kill window
 	{ Mod1Mask,                     XK_F4,     killclient,     {0} }, // Kill window
-	{ MODKEY|ShiftMask,				      XK_r,      spawn,		       SHCMD("xdotool getactivewindow windowsize 968 650")}, // Resize window
+	{ MODKEY|ShiftMask,				      XK_r,      spawn,		       SHCMD("$DOTFILES_BIN/dwm/resize-window")}, // Resize window
 
 	/* Focus */
 	{ Mod1Mask,                     XK_Tab,    focusstack,     {.i = +1 } }, // Focus next window
@@ -204,9 +204,12 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_l,      setmfact,       {.f = +0.01} }, // Increase size of master area
 	{ MODKEY|ControlMask,           XK_h,      setmfact,       {.f = -0.01} }, // Reduce size of master area
 
-	{ MODKEY,                      XK_KP_Insert, setmfact,     {.f = 1.55} }, // Reset the size of master area
-	{ MODKEY,                      XK_KP_End,   setmfact,      {.f = 1.69} }, // Size for waydroid
-	{ MODKEY,                      XK_KP_Down,  setmfact,      {.f = 1.66} }, // Size for emacs window
+	{ MODKEY,                      XK_KP_Insert, setmfact,     {.f = 1.55} }, // 0 Reset the size of master area
+	{ MODKEY,                      XK_KP_End,   setmfact,      {.f = 1.69} }, // 1 Size for waydroid
+	{ MODKEY,                      XK_KP_Down,  setmfact,      {.f = 1.66} }, // 2 Size for emacs window
+	{ MODKEY,                      XK_KP_Home, spawn,          SHCMD("$DOTFILES_BIN/dwm/resize-window")}, // 7 Scratch
+	{ MODKEY,                      XK_KP_Up,   spawn,          SHCMD("$DOTFILES_BIN/dwm/resize-window lg") }, // 8 Scratch-lg
+	{ MODKEY,                      XK_KP_Prior, spawn,         SHCMD("$DOTFILES_BIN/dwm/resize-window xl") }, // 9 Scratch-xl
 
 	/* Leyout manipulation */
 	{ MODKEY,                       XK_e,      setlayout,      {.v = &layouts[0]} }, // Set tile layout
