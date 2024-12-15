@@ -100,6 +100,7 @@ static const Rule rules[] = {
 	/* Games */
 	{ "Lutris",   NULL,       NULL,       NULL,       1 << 5,       0,           -1 },
 	{ NULL,       NULL,       "steamwebhelper", NULL, 1 << 5,       0,           -1 },
+	{ "gw.exe",   NULL,       NULL,       NULL,       1 << 6,       1,           -1 },
 	{ "steam_app_1284210", NULL, NULL,    NULL,       1 << 6,       0,           -1 },
 	{ "gw2-64.exe", NULL,     NULL,       NULL,       1 << 6,       1,           -1 },
 	{ "explorer.exe", NULL,   NULL,       NULL,       1 << 6,       1,           -1 },
@@ -110,6 +111,7 @@ static const Rule rules[] = {
 	{ "Celluloid", NULL,      NULL,       NULL,       1 << 7,       0,           -1 },
 	{ NULL,       NULL,       NULL,       "Haruna",   1 << 7,       0,           -1 },
 	{ NULL,       NULL,       NULL,    "qBittorrent", 1 << 8,       0,           -1 },
+	{ "easyeffects", NULL,    NULL,       NULL,       1 << 8,       0,           -1 },
 
 	/* VM */
 	{ "virt-manager", NULL,   NULL,       NULL,       1 << 7,       0,           -1 },
