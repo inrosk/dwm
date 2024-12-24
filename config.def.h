@@ -37,9 +37,10 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = { "sh", "-c", "$DOTFILES_BIN/dwm/scratch-term", NULL };
-const char *spcmd2[] = { "sh", "-c", "$DOTFILES_BIN/dwm/scratch-emacs", NULL };
-const char *spcmd3[] = { "sh", "-c", "$DOTFILES_BIN/dwm/scratch-lf", NULL };
+const char *spcmd0[] = { "sh", "-c", "$DOTFILES_BIN/dwm/scratch-term", NULL };
+const char *spcmd1[] = { "sh", "-c", "$DOTFILES_BIN/dwm/scratch-emacs", NULL };
+const char *spcmd2[] = { "sh", "-c", "$DOTFILES_BIN/dwm/scratch-lf", NULL };
+const char *spcmd3[] = { "sh", "-c", "$DOTFILES_BIN/dwm/scratch-thunar", NULL };
 /* const char *spcmd1[] = {"alacritty", "--class", "spterm", "-o", "window.dimensions.columns=120", "-o", "window.dimensions.lines=38", "-e", "tmux", "new-session", "-A", "-s", "spterm", NULL }; */
 /* const char *spcmd2[] = {"emacsclient", "-n", "-c", "--frame-parameters='(quote (name . \"scratchmacs\"))'", NULL }; */
 /* const char *spcmd3[] = {"alacritty", "--class", "splf", "-o", "window.dimensions.columns=120", "-o", "window.dimensions.lines=38", "-e", "tmux", "new-session", "-A", "-s", "splf", "lfrun", NULL }; */
@@ -47,9 +48,10 @@ const char *spcmd3[] = { "sh", "-c", "$DOTFILES_BIN/dwm/scratch-lf", NULL };
 /* const char *spcmd3[] = {"keepassxc", NULL }; */
 static Sp scratchpads[] = {
 	/* name          cmd  */
-	{"spterm",       spcmd1},
-	{"scratchmacs",  spcmd2},
-	{"splf",         spcmd3},
+	{"spterm",       spcmd0},
+	{"scratchmacs",  spcmd1},
+	{"splf",         spcmd2},
+	{"spthunar",     spcmd3},
 	/* {"keepassxc",    spcmd3}, */
 };
 
@@ -120,6 +122,7 @@ static const Rule rules[] = {
 	{ NULL,	      NULL,       "spterm",   NULL,		    SPTAG(0),			  1,			   -1 },
 	{ NULL,	      NULL,       "scratchmacs", NULL,    SPTAG(1),		    1,	       -1 },
 	{ NULL,	      NULL,       "splf",	    NULL,		    SPTAG(2),			 	1,	       -1 },
+	{ "spthunar",	NULL,       NULL,	      NULL,		    SPTAG(3),			 	1,	       -1 },
 };
 
 /* layout(s) */
@@ -228,6 +231,7 @@ static Key keys[] = {
 	{ MODKEY,            			      XK_z,			 togglescratch,  {.ui = 0 } },
 	{ MODKEY,            			      XK_x,			 togglescratch,  {.ui = 1 } },
 	{ MODKEY,            			      XK_c,	     togglescratch,  {.ui = 2 } },
+	{ MODKEY,            			      XK_v,	     togglescratch,  {.ui = 3 } },
 
 	/* Switching between monitors */
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
