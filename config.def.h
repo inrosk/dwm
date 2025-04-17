@@ -252,7 +252,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_semicolon, spawn,       SHCMD("CM_LAUNCHER=rofi clipmenu -i") },
 
 	/* Bookmarks */
-	{ MODKEY,                       XK_b,      spawn,          SHCMD("$DOTFILES_BIN/raindrop-rofi") },
+	{ MODKEY,                       XK_b,      spawn,          SHCMD("$DOTFILES_BIN/rofi-raindrop") },
 
 	/* Switching between tags */
 	TAGKEYS(                        XK_1,                      0)
