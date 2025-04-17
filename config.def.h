@@ -249,7 +249,10 @@ static Key keys[] = {
 	/* { MODKEY,                       XK_equal, spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +1%; pkill -RTMIN+10 dwmblocks") }, */
 
 	/* Clipmenu */
-	{ MODKEY,                       XK_semicolon, spawn,      SHCMD("CM_LAUNCHER=rofi clipmenu -i") },
+	{ MODKEY,                       XK_semicolon, spawn,       SHCMD("CM_LAUNCHER=rofi clipmenu -i") },
+
+	/* Bookmarks */
+	{ MODKEY,                       XK_b,      spawn,          SHCMD("$DOTFILES_BIN/raindrop-rofi") },
 
 	/* Switching between tags */
 	TAGKEYS(                        XK_1,                      0)
@@ -267,7 +270,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 
 	/* Useless */
-	{ MODKEY,                       XK_b,      togglebar,      {0} }, // Toggle bar
+	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} }, // Toggle bar
 	{ MODKEY,                       XK_Insert, togglegaps,     {0} }, // Toggle gaps
 	{ MODKEY|ShiftMask,             XK_Insert, defaultgaps,    {0} }, // Default gaps
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } }, // View all tags
