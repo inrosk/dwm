@@ -221,7 +221,6 @@ static Key keys[] = {
 	{ MODKEY,                      XK_KP_Prior, spawn,         SHCMD("$DOTFILES_BIN/dwm/resize-window xl") }, // 9 Scratch-xl
 
 	/* Leyout manipulation */
-	{ MODKEY,                       XK_e,      setlayout,      {.v = &layouts[0]} }, // Set tile layout
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} }, // Set tile layout
 	{ MODKEY,                       XK_w,      setlayout,      {.v = &layouts[1]} }, // Set monocle layout
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[2]} }, // Set floating layout
@@ -232,7 +231,7 @@ static Key keys[] = {
 	{ MODKEY,            			      XK_z,			 togglescratch,  {.ui = 0 } },
 	{ MODKEY,            			      XK_x,			 togglescratch,  {.ui = 1 } },
 	{ MODKEY,            			      XK_c,	     togglescratch,  {.ui = 2 } },
-	{ MODKEY,            			      XK_v,	     togglescratch,  {.ui = 3 } },
+	{ MODKEY,            			      XK_e,	     togglescratch,  {.ui = 3 } },
 
 	/* Switching between monitors */
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
