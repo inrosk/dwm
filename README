@@ -46,3 +46,38 @@ Configuration
 -------------
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
+
+Patches
+-------------
+- pertag + monitorrules
+- windowrolerule
+- togglelayout
+- attachbottom
+- noborder
+- no_transparent_borders
+- cfacts
+- dragcfact
+- ...
+- systray
+- vanitygaps
+- colorbar
+- statuscmd
+- autostart
+- ...
+- masterstacker
+- focusdir
+- placedir
+- keysequence
+- ...
+- togglefullscreen
+- fakefullscreenclient
+- tagmonfixfs
+- ...
+- alwayscenter
+- save floats
+- resizepoint
+- ...
+- default tag applications
+- renamedscratchpads
+- ...
+- cyclelayout
