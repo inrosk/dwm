@@ -122,9 +122,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_s,      spawndefault,   {0} },
-	{ MODKEY,                       XK_g,      togglescratch,  {.v = scratchpadcmd } },
-	{ MODKEY|ShiftMask,             XK_g,      removescratch,  {.v = scratchpadcmd } },
-	{ MODKEY|ControlMask,           XK_g,      setscratch,     {.v = scratchpadcmd } },
+	{ MODKEY,                       XK_a,      togglescratch,  {.v = scratchpadcmd } },
+	{ MODKEY|ShiftMask,             XK_a,      removescratch,  {.v = scratchpadcmd } },
+	{ MODKEY|ControlMask,           XK_a,      setscratch,     {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_Left,   focusdir,       {.i = 0 } }, // left
 	{ MODKEY,                       XK_Right,  focusdir,       {.i = 1 } }, // right

@@ -1890,6 +1890,7 @@ removescratch(const Arg *arg)
 	if (!c)
 		return;
 	c->scratchkey = 0;
+	XSetWindowBorder(dpy, c->win, scheme[SchemeSel][ColBorder].pixel);
 }
 
 void
@@ -2272,6 +2273,7 @@ setscratch(const Arg *arg)
 		return;
 
 	c->scratchkey = ((char**)arg->v)[0][0];
+	XSetWindowBorder(dpy, c->win, scheme[SchemeScratchSel][ColBorder].pixel);
 }
 
 void
