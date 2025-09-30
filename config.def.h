@@ -148,7 +148,8 @@ static const MonitorRule monrules[] = {
 
 /* commands */
 // Term
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "st", NULL };
+/* static const char *termcmd[]  = { "alacritty", NULL }; */
 
 // Dmenu
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
