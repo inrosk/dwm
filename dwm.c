@@ -2394,8 +2394,8 @@ showhide(Client *c)
 		showhide(c->snext);
 	} else {
 		/* optional: auto-hide scratchpads when moving to other tags */
-		if (c->scratchkey != 0 && !(c->tags & c->mon->tagset[c->mon->seltags]))
-			c->tags = 0;
+		/* if (c->scratchkey != 0 && !(c->tags & c->mon->tagset[c->mon->seltags])) */
+		/* 	c->tags = 0; */
 		/* hide clients bottom up */
 		showhide(c->snext);
 		XMoveWindow(dpy, c->win, WIDTH(c) * -2, c->y);
@@ -3141,12 +3141,18 @@ view(const Arg *arg)
 {
 	int i;
 	unsigned int tmptag;
+	Client *c;
 
 	if ((arg->ui & TAGMASK) == selmon->tagset[selmon->seltags])
 		return;
 	setlasttag(arg->ui);
 	selmon->seltags ^= 1; /* toggle sel tagset */
 	if (arg->ui & TAGMASK) {
+		for (c = selmon->clients; c; c = c->next) {
+			if (c->scratchkey != 0 && (c->tags & (arg->ui & TAGMASK)))
+				c->tags = 0;
+		}
+
 		selmon->pertag->prevtag = selmon->pertag->curtag;
 		selmon->tagset[selmon->seltags] = arg->ui & TAGMASK;
 		if (arg->ui == ~0)
