@@ -202,11 +202,11 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_s,      spawndefault,   {0} },
 
 	/* Utils */
-	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("gpick -s") },
-	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("clipmenu -i") },
+	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("my-colorpicker") },
+	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("my-clipboard") },
 	{ MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("rofi-raindrop") },
 	/* { MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("$DOTFILES_BIN/pass") }, */
-	/* { MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("$DOTFILES_BIN/translate") }, */
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("dmenu-translate") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("my-scrcpy") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("my-screenshot -r -s") },
 
@@ -216,8 +216,10 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Print,  spawn,          SHCMD("my-screenshot-dmenu") },
 
 	// Volume control
-	{ MODKEY,                       XK_minus,  spawn,          SHCMD("set-vol down") },
-	{ MODKEY,                       XK_equal,  spawn,          SHCMD("set-vol up") },
+	{ MODKEY,                       XK_minus,  spawn,          SHCMD("my-vol down") },
+	{ MODKEY|ShiftMask,             XK_minus,  spawn,          SHCMD("my-vol mute") },
+	{ MODKEY,                       XK_equal,  spawn,          SHCMD("my-vol up") },
+	{ MODKEY|ShiftMask,             XK_equal,  spawn,          SHCMD("my-vol mute") },
 
 	/* Focus */
 	{ Mod1Mask,                     XK_Tab,    focusstack,     {.i = +1 } }, // Focus next window
