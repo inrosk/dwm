@@ -205,11 +205,12 @@ static const Key keys[] = {
 	/* { MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("$DOTFILES_BIN/pass") }, */
 	/* { MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("$DOTFILES_BIN/translate") }, */
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("my-scrcpy") },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("spectacle -r") },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("my-screenshot -r -s") },
 
 	// Print screen
-	{ MODKEY,                       XK_Print,  spawn,          SHCMD("spectacle -fbc") },
-	{ MODKEY|Mod1Mask,              XK_Print,  spawn,          SHCMD("spectacle -abc") },
+	{ MODKEY,                       XK_Print,  spawn,          SHCMD("my-screenshot -f -s") },
+	{ MODKEY|ControlMask,           XK_Print,  spawn,          SHCMD("my-screenshot -a -s") },
+	{ MODKEY|ShiftMask,             XK_Print,  spawn,          SHCMD("my-screenshot-dmenu") },
 
 	// Volume control
 	{ MODKEY,                       XK_minus,  spawn,          SHCMD("set-vol down") },
