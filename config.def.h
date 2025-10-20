@@ -131,11 +131,11 @@ static const MonitorRule monrules[] = {
 	{ MOD, XK_k,                    ACTION, {.i = INC(-1) } }, \
 	{ MOD, XK_g,                    ACTION, {.i = PREVSEL } }, \
 	{ MOD, XK_y,                    ACTION, {.i = MASTER(1) } }, \
-	{ MOD, XK_u,                    ACTION, {.i = MASTER(2) } }, \
-	{ MOD, XK_o,                    ACTION, {.i = STACK(1) } }, \
-	{ MOD, XK_p,                    ACTION, {.i = STACK(2) } }, \
-	{ MOD, XK_n,                    ACTION, {.i = STACK(3) } }, \
-	{ MOD, XK_backslash,            ACTION, {.i = LASTTILED } },
+	{ MOD, XK_o,                    ACTION, {.i = STACK(1) } },
+	/* { MOD, XK_u,                    ACTION, {.i = MASTER(2) } }, \ */
+	/* { MOD, XK_p,                    ACTION, {.i = STACK(2) } }, \ */
+	/* { MOD, XK_n,                    ACTION, {.i = STACK(3) } }, \ */
+	/* { MOD, XK_backslash,            ACTION, {.i = LASTTILED } }, */
 
 #define SCRATCHKEYS(KEY,CMD) \
 	{ MODKEY,                       KEY,      togglescratch,       {.v = CMD } }, \
@@ -209,6 +209,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("dmenu-translate") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("my-scrcpy") },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("my-screenshot -r -s") },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("tmux-sessionizer -s -d") },
 
 	// Print screen
 	{ MODKEY,                       XK_Print,  spawn,          SHCMD("my-screenshot -f -s") },
