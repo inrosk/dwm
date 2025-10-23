@@ -63,6 +63,7 @@ static const Rule rules[] = {
 	{ NULL,       "quake",    NULL,       NULL,       0,            1,           -1,        0 },
 	{ NULL,       "GtkFileChooserDialog", NULL,	NULL, 0,				    1,           -1,        0 },
 	{ "st-float", NULL,       NULL,       NULL,       0,            1,           -1,        0 },
+	{ "emacs-float", NULL,    NULL,       NULL,       0,            1,           -1,        0 },
 	{ NULL,       NULL,       "emacs-float", NULL,    0,            1,           -1,        0 },
 
 	{ "pavucontrol", NULL,    NULL,       NULL,       0,            1,           -1,        0 },
