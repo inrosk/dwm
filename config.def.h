@@ -23,18 +23,18 @@ static const char col_accent[]        = "#98971a";
 static const char col_red[]         = "#fb4934";
 static const char col_orange[]      = "#fe8019";
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
-	[SchemeSel]  = { col_gray4, col_gray2,  col_accent  },
+  /*               fg         bg         border   */
+  [SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
+  [SchemeSel]  = { col_gray4, col_gray2,  col_accent  },
 
-	[SchemeStatus]  = { col_gray4, col_gray1,  col_gray1  }, // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]  = { col_gray4, col_gray2,  col_gray1  }, // Tagbar left selected {text,background,not used but cannot be empty}
-	[SchemeTagsNorm]  = { col_gray3, col_gray1,  col_gray1  }, // Tagbar left unselected {text,background,not used but cannot be empty}
-	[SchemeInfoSel]  = { col_gray4, col_gray1,  col_gray1  }, // infobar middle  selected {text,background,not used but cannot be empty}
-	[SchemeInfoNorm]  = { col_gray4, col_gray1,  col_gray1  }, // infobar middle  unselected {text,background,not used but cannot be empty}
+  [SchemeStatus]  = { col_gray4, col_gray1,  col_gray1  }, // Statusbar right {text,background,not used but cannot be empty}
+  [SchemeTagsSel]  = { col_gray4, col_gray2,  col_gray1  }, // Tagbar left selected {text,background,not used but cannot be empty}
+  [SchemeTagsNorm]  = { col_gray3, col_gray1,  col_gray1  }, // Tagbar left unselected {text,background,not used but cannot be empty}
+  [SchemeInfoSel]  = { col_gray4, col_gray1,  col_gray1  }, // infobar middle  selected {text,background,not used but cannot be empty}
+  [SchemeInfoNorm]  = { col_gray4, col_gray1,  col_gray1  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 
-	[SchemeScratchNorm] = { col_gray4, col_gray1,  col_orange },
-	[SchemeScratchSel]  = { col_gray4, col_gray2,  col_red  },
+  [SchemeScratchNorm] = { col_gray4, col_gray1,  col_orange },
+  [SchemeScratchSel]  = { col_gray4, col_gray2,  col_red  },
 };
 
 /* tagging */
@@ -42,52 +42,61 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const char *defaulttagapps[] = { "firefox", "google-chrome-stable", "egui", "egui", "figma-linux", "virt-manager", NULL, NULL, NULL };
 
 static const Rule rules[] = {
-	/* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 *  WM_WINDOW_ROLE(STRING) = role
-	 */
+  /* xprop(1):
+  *	WM_CLASS(STRING) = instance, class
+  *	WM_NAME(STRING) = title
+  *  WM_WINDOW_ROLE(STRING) = role
+  */
 
-	/* class      role,       instance    title       tags mask     isfloating   monitor    scratch key */
-	{ "ark",      NULL,       NULL,       NULL,       0,            1,           -1,        0 },
-	{ "dolphin",  NULL,       NULL,       NULL,       0,            1,           -1,        0 },
-	{ "spectacle", NULL,      NULL,       NULL,       0,            1,           -1,        0 },
-	{ "gwenview", NULL,       NULL,       NULL,       0,            1,           -1,        0 },
-	{ "Engrampa", NULL,       NULL,       NULL,       0,            1,           -1,        0 },
-	{ "Ristretto", NULL,      NULL,       NULL,       0,            1,           -1,        0 },
-	{ "Thunar",   NULL,       NULL,       NULL,       0,            1,           -1,        0 },
-	{ NULL,       NULL,       "pcmanfm",  NULL,       0,            1,           -1,        0 },
-	{ "feh",      NULL,       NULL,       NULL,       0,            1,           -1,        0 },
-	{ "firefox",  NULL,       "Places",   NULL,       0,            1,           -1,        0 },
-	{ NULL,       "pop-up",   NULL,       NULL,       0,            1,           -1,        0 },
-	{ NULL,       "quake",    NULL,       NULL,       0,            1,           -1,        0 },
-	{ NULL,       "GtkFileChooserDialog", NULL,	NULL, 0,				    1,           -1,        0 },
-	{ "st-float", NULL,       NULL,       NULL,       0,            1,           -1,        0 },
-	{ NULL,       NULL,       "emacs-float", NULL,    0,            1,           -1,        0 },
+  /* class      role,       instance    title       tags mask     isfloating   monitor    scratch key */
+  { "ark",      NULL,       NULL,       NULL,       0,            1,           -1,        0 },
+  { "dolphin",  NULL,       NULL,       NULL,       0,            1,           -1,        0 },
+  { "spectacle", NULL,      NULL,       NULL,       0,            1,           -1,        0 },
+  { "gwenview", NULL,       NULL,       NULL,       0,            1,           -1,        0 },
+  { "Engrampa", NULL,       NULL,       NULL,       0,            1,           -1,        0 },
+  { "Ristretto", NULL,      NULL,       NULL,       0,            1,           -1,        0 },
+  { "Thunar",   NULL,       NULL,       NULL,       0,            1,           -1,        0 },
+  { NULL,       NULL,       "pcmanfm",  NULL,       0,            1,           -1,        0 },
+  { "feh",      NULL,       NULL,       NULL,       0,            1,           -1,        0 },
+  { "firefox",  NULL,       "Places",   NULL,       0,            1,           -1,        0 },
+  { NULL,       "pop-up",   NULL,       NULL,       0,            1,           -1,        0 },
+  { NULL,       "quake",    NULL,       NULL,       0,            1,           -1,        0 },
+  { NULL,       "GtkFileChooserDialog", NULL,	NULL, 0,          1,           -1,        0 },
+  { "st-float", NULL,       NULL,       NULL,       0,            1,           -1,        0 },
+  { NULL,       NULL,       "emacs-float", NULL,    0,            1,           -1,        0 },
 
-	{ "pavucontrol", NULL,    NULL,       NULL,       0,            1,           -1,        0 },
-	{ "Qalculate",   NULL,    NULL,       NULL,       0,            1,           -1,        0 },
-	{ "Gpick",       NULL,    NULL,       NULL,       0,            1,           -1,        0 },
+  { "pavucontrol", NULL,    NULL,       NULL,       0,            1,           -1,        0 },
+  { "Qalculate",   NULL,    NULL,       NULL,       0,            1,           -1,        0 },
+  { "Gpick",       NULL,    NULL,       NULL,       0,            1,           -1,        0 },
 
-	/* Graphics */
-	{ "Gimp",     NULL,       NULL,       NULL,       1 << 4,       0,           -1,        0 },
-	{ "krita",    NULL,       NULL,       NULL,       1 << 4,       0,           -1,        0 },
-	{ "figma",    NULL,       NULL,       NULL,       1 << 4,       0,           -1,        0 },
+  /* Graphics */
+  { "Gimp",     NULL,       NULL,       NULL,       1 << 4,       0,           -1,        0 },
+  { "krita",    NULL,       NULL,       NULL,       1 << 4,       0,           -1,        0 },
+  { "figma",    NULL,       NULL,       NULL,       1 << 4,       0,           -1,        0 },
 
-	/* Media */
-	{ "Celluloid", NULL,      NULL,       NULL,       1 << 6,       0,           -1,        0 },
-	{ NULL,       NULL,       NULL,       "Haruna",   1 << 6,       0,           -1,        0 },
-	{ NULL,       NULL,       NULL,       "qBittorrent", 1 << 8,    0,           -1,        0 },
-	{ "easyeffects", NULL,    NULL,       NULL,       1 << 8,       0,           -1,        0 },
+  /* Media */
+  { "Celluloid", NULL,      NULL,       NULL,       1 << 6,       0,           -1,        0 },
+  { NULL,       NULL,       NULL,       "Haruna",   1 << 6,       0,           -1,        0 },
+  { NULL,       NULL,       NULL,       "qBittorrent", 1 << 8,    0,           -1,        0 },
+  { "easyeffects", NULL,    NULL,       NULL,       1 << 8,       0,           -1,        0 },
 
-	/* VM */
-	{ "virt-manager", NULL,   NULL,       NULL,       1 << 5,       0,           -1,        0 },
+  /* Gaming */
+  { "Lutris",   NULL,       NULL,       NULL,       1 << 6,       0,           -1,        0 },
+  { NULL,       NULL,       "steamwebhelper", NULL, 1 << 6,       0,           -1,        0 },
+  { "d2r.exe",   NULL,      NULL,       NULL,       1 << 7,       0,           -1,        0 },
+  { "gw.exe",   NULL,       NULL,       NULL,       1 << 7,       0,           -1,        0 },
+  { "steam_app_1284210", NULL, NULL,    NULL,       1 << 7,       0,           -1,        0 },
+  { "gw2-64.exe", NULL,     NULL,       NULL,       1 << 7,       0,           -1,        0 },
+  { "explorer.exe", NULL,   NULL,       NULL,       1 << 7,       0,           -1,        0 },
 
-	/* Scratchpads */
-	{ "spterm",   NULL,	      NULL,       NULL,		    0,			      1,			   -1,         'z' },
-	{ NULL,	      NULL,       "spemacs",  NULL,       0,		        1,	       -1,         'x' },
-	{ "splf",     NULL,	      NULL,       NULL,		    0,			      1,			   -1,         'c' },
-	{ "spfm",	    NULL,       NULL,	      NULL,		    0,			 	    1,	       -1,         'e' },
+  /* VM */
+  { "virt-manager", NULL,   NULL,       NULL,       1 << 5,       0,           -1,        0 },
+
+  /* Scratchpads */
+  { "spterm",   NULL,       NULL,       NULL,       0,            1,           -1,       'z' },
+  { NULL,       NULL,       "spemacs",  NULL,       0,            1,           -1,       'x' },
+  { "splf",     NULL,       NULL,       NULL,       0,            1,           -1,       'c' },
+  { "spfm",     NULL,       NULL,       NULL,       0,            1,           -1,       'e' },
 };
 
 /* layout(s) */
@@ -101,21 +110,20 @@ static const int refreshrate = 60;  /* refresh rate (per second) for client move
 #include "vanitygaps.c"
 
 static const Layout layouts[] = {
-	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "[M]",      monocle },
-	{ "D[]",      deck },
-	{ "><>",      NULL },    /* no layout function means floating */
-	{ NULL,       NULL },
+  /* symbol     arrange function */
+  { "[]=",      tile },    /* first entry is default */
+  { "[M]",      monocle },
+  { "D[]",      deck },
+  { "><>",      NULL },    /* no layout function means floating */
+  { NULL,       NULL },
 };
 
 static const MonitorRule monrules[] = {
-	/* monitor  tag  layout  mfact  nmaster  showbar  topbar */
-	/* {  1,       -1,  2,      -1,    -1,      -1,      -1     }, // use a different layout for the second monitor */
-	{  -1,       5,  1,      -1,    -1,      -1,      -1     }, // tag 5, monocle
-	{  -1,       6,  1,      -1,    -1,      -1,      -1     }, // tag 6, monocle
-	{  -1,       8,  1,      -1,    -1,      -1,      -1     }, // tag 8, monocle
-	{  -1,      -1,  0,      -1,    -1,      -1,      -1     }, // default
+  /* monitor  tag  layout  mfact  nmaster  showbar  topbar */
+  /* {  1,       -1,  2,      -1,    -1,      -1,      -1     }, // use a different layout for the second monitor */
+  {  -1,       5,  1,      -1,    -1,      -1,      -1     }, // tag 5, monocle
+  {  -1,       6,  1,      -1,    -1,      -1,      -1     }, // tag 6, monocle
+  {  -1,      -1,  0,      -1,    -1,      -1,      -1     }, // default
 };
 
 /* key definitions */
