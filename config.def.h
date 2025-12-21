@@ -65,8 +65,8 @@ static const Rule rules[] = {
   { "st-float", NULL,       NULL,       NULL,       0,            1,           -1,        0 },
   { NULL,       NULL,       "emacs-float", NULL,    0,            1,           -1,        0 },
 
-  { "pavucontrol", NULL,    NULL,       NULL,       0,            1,           -1,        0 },
-  { "Qalculate",   NULL,    NULL,       NULL,       0,            1,           -1,        0 },
+  { "pavucontrol", NULL,    NULL,       NULL,       0,            1,           -1,       'a' },
+  { "Qalculate",   NULL,    NULL,       NULL,       0,            1,           -1,       'a' },
   { "Gpick",       NULL,    NULL,       NULL,       0,            1,           -1,        0 },
 
   /* Graphics */
@@ -77,12 +77,12 @@ static const Rule rules[] = {
   /* Media */
   { "Celluloid", NULL,      NULL,       NULL,       1 << 6,       0,           -1,        0 },
   { NULL,       NULL,       NULL,       "Haruna",   1 << 6,       0,           -1,        0 },
-  { NULL,       NULL,       NULL,       "qBittorrent", 1 << 8,    0,           -1,        0 },
-  { "easyeffects", NULL,    NULL,       NULL,       1 << 8,       0,           -1,        0 },
+  { NULL,       NULL,       NULL,       "qBittorrent", 0,         1,           -1,       'a' },
+  { "easyeffects", NULL,    NULL,       NULL,       0,            1,           -1,       'a' },
 
   /* Gaming */
-  { "Lutris",   NULL,       NULL,       NULL,       1 << 6,       0,           -1,        0 },
-  { NULL,       NULL,       "steamwebhelper", NULL, 1 << 6,       0,           -1,        0 },
+  { "Lutris",   NULL,       NULL,       NULL,       0,            1,           -1,       'a' },
+  { NULL,       NULL,       "steamwebhelper", NULL, 0,            1,           -1,       'a' },
   { "steam_app", NULL,      NULL,       NULL,       1 << 2,       0,           -1,        0,        1 },
   { "gw2-64.exe", NULL,     NULL,       NULL,       1 << 2,       0,           -1,        0,        1 },
   { "gw.exe",   NULL,       NULL,       NULL,       1 << 2,       0,           -1,        0,        1 },
