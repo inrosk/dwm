@@ -78,7 +78,7 @@ static const Rule rules[] = {
   /* Media */
   { "Celluloid", NULL,      NULL,       NULL,       1 << 6,       0,           -1,        0 },
   { NULL,       NULL,       NULL,       "Haruna",   1 << 6,       0,           -1,        0 },
-  { NULL,       NULL,       NULL,       "qBittorrent", 0,         1,           -1,       'a' },
+  { NULL,       NULL,       NULL,       "qBittorrent", 1 << 8,    1,           -1,       'a' },
   { "easyeffects", NULL,    NULL,       NULL,       0,            1,           -1,       'a' },
 
   /* Gaming */
