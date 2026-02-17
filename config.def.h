@@ -49,15 +49,15 @@ static const Rule rules[] = {
   */
 
   /* class      role,       instance    title       tags mask     isfloating   monitor    scratch key  isgame */
-  { "ark",      NULL,       NULL,       NULL,       0,            1,           -1,       'a' },
-  { "dolphin",  NULL,       NULL,       NULL,       0,            1,           -1,       'e' },
+  { "ark",      NULL,       NULL,       NULL,       0,            0,           -1,       'e' },
+  { "dolphin",  NULL,       NULL,       NULL,       0,            0,           -1,       'e' },
   { "spectacle", NULL,      NULL,       NULL,       0,            1,           -1,        0 },
   { "gwenview", NULL,       NULL,       NULL,       0,            1,           -1,        0 },
-  { "Engrampa", NULL,       NULL,       NULL,       0,            1,           -1,       'a' },
+  { "Engrampa", NULL,       NULL,       NULL,       0,            0,           -1,       'e' },
   { "Ristretto", NULL,      NULL,       NULL,       0,            1,           -1,        0 },
-  { "Nautilus", NULL,       NULL,       NULL,       0,            1,           -1,       'e' },
-  { "Thunar",   NULL,       NULL,       NULL,       0,            1,           -1,       'e' },
-  { NULL,       NULL,       "pcmanfm",  NULL,       0,            1,           -1,       'e' },
+  { "Nautilus", NULL,       NULL,       NULL,       0,            0,           -1,       'e' },
+  { "Thunar",   NULL,       NULL,       NULL,       0,            0,           -1,       'e' },
+  { NULL,       NULL,       "pcmanfm",  NULL,       0,            0,           -1,       'e' },
   { "feh",      NULL,       NULL,       NULL,       0,            1,           -1,        0 },
   { "firefox",  NULL,       "Places",   NULL,       0,            1,           -1,        0 },
   { NULL,       "pop-up",   NULL,       NULL,       0,            1,           -1,        0 },
@@ -76,14 +76,15 @@ static const Rule rules[] = {
   { "figma",    NULL,       NULL,       NULL,       1 << 4,       0,           -1,        0 },
 
   /* Media */
+  { "Spotify",  NULL,       NULL,       NULL,       0,            0,           -1,       'a' },
   { "Celluloid", NULL,      NULL,       NULL,       1 << 6,       0,           -1,        0 },
   { NULL,       NULL,       NULL,       "Haruna",   1 << 6,       0,           -1,        0 },
-  { NULL,       NULL,       NULL,       "qBittorrent", 1 << 8,    1,           -1,       'a' },
-  { "easyeffects", NULL,    NULL,       NULL,       0,            1,           -1,       'a' },
+  { NULL,       NULL,       NULL,       "qBittorrent", 1 << 8,    0,           -1,       'a' },
+  { "easyeffects", NULL,    NULL,       NULL,       0,            0,           -1,       'a' },
 
   /* Gaming */
-  { "Lutris",   NULL,       NULL,       NULL,       0,            1,           -1,       'a' },
-  { NULL,       NULL,       "steamwebhelper", NULL, 0,            1,           -1,       'a' },
+  { "Lutris",   NULL,       NULL,       NULL,       0,            0,           -1,       'a' },
+  { NULL,       NULL,       "steamwebhelper", NULL, 0,            0,           -1,       'a' },
   { "steam_app", NULL,      NULL,       NULL,       1 << 2,       0,           -1,        0,        1 },
   { "gw2-64.exe", NULL,     NULL,       NULL,       1 << 2,       0,           -1,        0,        1 },
   { "gw.exe",   NULL,       NULL,       NULL,       1 << 2,       0,           -1,        0,        1 },
