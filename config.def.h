@@ -79,7 +79,7 @@ static const Rule rules[] = {
   { "Spotify",  NULL,       NULL,       NULL,       0,            1,           -1,       'a' },
   { "Celluloid", NULL,      NULL,       NULL,       1 << 6,       0,           -1,        0 },
   { NULL,       NULL,       NULL,       "Haruna",   1 << 6,       0,           -1,        0 },
-  { NULL,       NULL,       NULL,       "qBittorrent", 1 << 8,    0,           -1,       'a' },
+  { NULL,       NULL,       NULL,       "qBittorrent", 1 << 8,    0,           -1,        0 },
   { "easyeffects", NULL,    NULL,       NULL,       0,            0,           -1,       'a' },
 
   /* Gaming */
