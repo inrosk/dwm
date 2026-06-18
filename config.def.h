@@ -53,11 +53,6 @@ static const Rule rules[] = {
   { "dolphin",  NULL,       NULL,       NULL,       0,            0,           -1,       'e' },
   { "spectacle", NULL,      NULL,       NULL,       0,            1,           -1,        0 },
   { "gwenview", NULL,       NULL,       NULL,       0,            1,           -1,        0 },
-  { "Engrampa", NULL,       NULL,       NULL,       0,            0,           -1,       'e' },
-  { "Ristretto", NULL,      NULL,       NULL,       0,            1,           -1,        0 },
-  { "Nautilus", NULL,       NULL,       NULL,       0,            0,           -1,       'e' },
-  { "Thunar",   NULL,       NULL,       NULL,       0,            0,           -1,       'e' },
-  { NULL,       NULL,       "pcmanfm",  NULL,       0,            0,           -1,       'e' },
   { "feh",      NULL,       NULL,       NULL,       0,            1,           -1,        0 },
   { "firefox",  NULL,       "Places",   NULL,       0,            1,           -1,        0 },
   { NULL,       "pop-up",   NULL,       NULL,       0,            1,           -1,        0 },
@@ -77,7 +72,6 @@ static const Rule rules[] = {
 
   /* Media */
   { "Spotify",  NULL,       NULL,       NULL,       0,            1,           -1,       'a' },
-  { "Celluloid", NULL,      NULL,       NULL,       1 << 6,       0,           -1,        0 },
   { NULL,       NULL,       NULL,       "Haruna",   1 << 6,       0,           -1,        0 },
   { NULL,       NULL,       NULL,       "qBittorrent", 1 << 8,    0,           -1,        0 },
   { "easyeffects", NULL,    NULL,       NULL,       0,            0,           -1,       'a' },
@@ -139,9 +133,9 @@ static const MonitorRule monrules[] = {
 #define STACKKEYS(MOD,ACTION) \
 	{ MOD, XK_j,                    ACTION, {.i = INC(+1) } }, \
 	{ MOD, XK_k,                    ACTION, {.i = INC(-1) } }, \
-	{ MOD, XK_g,                    ACTION, {.i = PREVSEL } }, \
-	{ MOD, XK_y,                    ACTION, {.i = MASTER(1) } }, \
-	{ MOD, XK_o,                    ACTION, {.i = STACK(1) } },
+	/* { MOD, XK_g,                    ACTION, {.i = PREVSEL } }, \ */
+	/* { MOD, XK_y,                    ACTION, {.i = MASTER(1) } }, \ */
+	/* { MOD, XK_o,                    ACTION, {.i = STACK(1) } }, */
 	/* { MOD, XK_u,                    ACTION, {.i = MASTER(2) } }, \ */
 	/* { MOD, XK_p,                    ACTION, {.i = STACK(2) } }, \ */
 	/* { MOD, XK_n,                    ACTION, {.i = STACK(3) } }, \ */
@@ -205,8 +199,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ Mod1Mask,                     XK_F4,     killclient,     {0} },
 
-	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ControlMask,           XK_d,      spawn,          {.v = roficmd } },
+	{ MODKEY|ControlMask,           XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("egui") },
 	{ MODKEY,                       XK_s,      spawndefault,   {0} },
@@ -214,17 +208,12 @@ static const Key keys[] = {
 	/* Utils */
 	{ MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("my-colorpicker") },
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD("my-clipboard") },
-	{ MODKEY|ShiftMask,             XK_b,      spawn,          SHCMD("rofi-raindrop") },
-	/* { MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("$DOTFILES_BIN/pass") }, */
-	{ MODKEY|ShiftMask,             XK_t,      spawn,          SHCMD("dmenu-translate") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD("my-scrcpy") },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("my-screenshot -r -s") },
-	{ MODKEY,                       XK_p,      spawn,          SHCMD("tmux-sessionizer -s -d") },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("my-screenshot") },
 
 	// Print screen
-	{ MODKEY,                       XK_Print,  spawn,          SHCMD("my-screenshot -f -s") },
-	{ MODKEY|ControlMask,           XK_Print,  spawn,          SHCMD("my-screenshot -a -s") },
-	{ MODKEY|ShiftMask,             XK_Print,  spawn,          SHCMD("my-screenshot-dmenu") },
+	/* { MODKEY,                       XK_Print,  spawn,          SHCMD("my-screenshot -f -s") }, */
+	/* { MODKEY|ControlMask,           XK_Print,  spawn,          SHCMD("my-screenshot -a -s") }, */
 
 	// Volume control
 	{ MODKEY,                       XK_minus,  spawn,          SHCMD("my-vol down") },
