@@ -65,6 +65,9 @@ static const Rule rules[] = {
   { "Qalculate",   NULL,    NULL,       NULL,       0,            1,           -1,       'a' },
   { "Gpick",       NULL,    NULL,       NULL,       0,            1,           -1,        0 },
 
+  /* For selenium */
+  { "Chromium-browser", NULL, NULL,     NULL,       1 << 5,       0,           -1,        0 },
+
   /* Graphics */
   { "Gimp",     NULL,       NULL,       NULL,       1 << 4,       0,           -1,        0 },
   { "krita",    NULL,       NULL,       NULL,       1 << 4,       0,           -1,        0 },
